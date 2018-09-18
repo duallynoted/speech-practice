@@ -11,6 +11,20 @@ app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded);
 app.use(bodyParser.json());
 
+const Schema = mongoose.Schema;
+const speechSchema = new Schema({
+    name: { type: String },
+    ummmm: { type: Number },
+    uhhhh: {type: Number },
+    and: {type: Number },
+    like: {type: Number },
+    so: {type: Number },
+    youKnow: {type: Number },
+    doubleClutch: {type: Number },
+    falseStart: {type: Number }
+});
+const Speech = mongoose.model('speech', speechSchema);
+
 //mongoose
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/speeches');

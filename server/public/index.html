@@ -14,10 +14,53 @@
 
 <body ng-app="SpeechApp">
     <div class="jumbotron">
-    <div ng-controller="SpeechController as vm">    
-        <h1>Prime Speech Practice</h1>
-        {{vm.message}}
-    </div>
+        <div ng-controller="SpeechController as vm">
+            <h1>Prime Speech Practice</h1>
+            <p>This app takes some of the pressure off of the scorekeepers, and might make it a bit more fun.</p>
+            <input type="text" placeholder="Student Name">
+        </div>
+        <br>
+        <div class="container">
+            <button>Ummmm</button>
+            <button>Uhhhh</button>
+            <button>And</button>
+            <button>Like</button>
+            <button>So</button>
+            <button>You Know</button>
+            <button>Double-Clutch</button>
+            <button>False Start</button>
+        </div>
+        <br>
+        <br>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Ummmm</th>
+                        <th>Uhhhh</th>
+                        <th>And</th>
+                        <th>Like</th>
+                        <th>So</th>
+                        <th>You Know</th>
+                        <th>Double-Clutch</th>
+                        <th>False Start</th>
+
+
+                    </tr>
+                </thead>
+                <tbody id="task-output">
+                    <tr ng-repeat="task in vm.tasksArray| filter: test">
+                        <td>{{task.task}}</td>
+                        <td>{{task.category}}</td>
+                        <td>{{task.completed}}</td>
+                        <td><button class="btn btn-success" ng-click="vm.updateTask(task)" ng-if="task.completed==true">Got
+                                it done?</button>
+                        <td><button class="btn btn-secondary" ng-click="vm.deleteTask(task)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 
