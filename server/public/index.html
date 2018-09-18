@@ -18,17 +18,18 @@
             <h1>Prime Speech Practice</h1>
             <p>This app takes some of the pressure off of the scorekeepers, and might make it a bit more fun.</p>
             <input type="text" placeholder="Student Name">
+            <button class="btn btn-primary" ng-click="vm.addStudent()">Speak Now</button>
         </div>
         <br>
         <div class="container">
-            <button>Ummmm</button>
-            <button>Uhhhh</button>
-            <button>And</button>
-            <button>Like</button>
-            <button>So</button>
-            <button>You Know</button>
-            <button>Double-Clutch</button>
-            <button>False Start</button>
+            <button class="btn">Ummmm</button>
+            <button class="btn">Uhhhh</button>
+            <button class="btn">And</button>
+            <button class="btn">Like</button>
+            <button class="btn">So</button>
+            <button class="btn">You Know</button>
+            <button class="btn">Double-Clutch</button>
+            <button class="btn">False Start</button>
         </div>
         <br>
         <br>
@@ -45,18 +46,19 @@
                         <th>You Know</th>
                         <th>Double-Clutch</th>
                         <th>False Start</th>
-
-
                     </tr>
                 </thead>
-                <tbody id="task-output">
-                    <tr ng-repeat="task in vm.tasksArray| filter: test">
-                        <td>{{task.task}}</td>
-                        <td>{{task.category}}</td>
-                        <td>{{task.completed}}</td>
-                        <td><button class="btn btn-success" ng-click="vm.updateTask(task)" ng-if="task.completed==true">Got
-                                it done?</button>
-                        <td><button class="btn btn-secondary" ng-click="vm.deleteTask(task)">Delete</button></td>
+                <tbody id="speech-output">
+                    <tr ng-repeat="name in vm.speechesArray| filter: test">
+                        <td>{{name}}</td>
+                        <td><button class="btn">Ummmm</button></td>
+                        <td><button class="btn">Uhhhh</button></td>
+                        <td><button class="btn">And</button></td>
+                        <td><button class="btn">Like</button></td>
+                        <td><button class="btn">So</button></td>
+                        <td><button class="btn">You Know</button></td>
+                        <td><button class="btn">Double-Clutch</button></td>
+                        <td><button class="btn">False Start</button></td>
                     </tr>
                 </tbody>
             </table>
